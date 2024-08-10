@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Price and Rating Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input {
+            margin: 5px;
+        }
+
+        .graph-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .bar {
+            height: 20px;
+            background-color: #4CAF50;
+            margin: 2px 0;
+        }
+
+        .bar-rating {
+            background-color: #FF9800;
+        }
+
+        .chart {
+            width: 45%;
+        }
+
+        .chart div {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .bar-label {
+            position: absolute;
+            left: 5px;
+            top: 0;
+            color: white;
+            font-size: 12px;
+        }
+
+        .sort-buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product Price and Rating Chart</h2>
+
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" placeholder="Enter product name">
+    <br>
+    <label for="productPrice">Price:</label>
+    <input type="number" id="productPrice" placeholder="Enter product price">
+    <br>
+    <label for="productRating">Rating:</label>
+    <input type="number" id="productRating" placeholder="Enter product rating (1-5)">
+    <br>
+    <button onclick="addProduct()">Add Product</button>
+
+    <div class="sort-buttons">
+        <button onclick="sortProductsByPrice()">Sort by Price</button>
+        <button onclick="sortProductsByRating()">Sort by Rating</button>
+    </div>
+
+    <div class="graph-container">
+        <div class="chart" id="priceChart"></div>
+        <div class="chart" id="ratingChart"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
